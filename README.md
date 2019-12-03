@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-#  Redirect 重定向有问题，不会整
+#  Redirect 重定向有问题 ~
 
 ## Available Scripts
 
