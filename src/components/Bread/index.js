@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Breadcrumb, Alert } from 'antd';
 import styled from 'styled-components';
-import breadcrumbNameMap from './config';
+import { permissionMap } from '@/utils/permission.js';
 const BreadWrapper = styled.div`
   width: 100%;
   height: auto;
@@ -12,11 +12,17 @@ const Bread = (props) => {
   const { location } = props;
     const pathSnippets = location.pathname.split('/').filter(i => i);
     const extraBreadcrumbItems = pathSnippets.map((_, index) => {
-      const url = `/${pathSnippets.slice(0, index + 1).join('/')}`;
+      const pathArr = pathSnippets.slice(0, index + 1);
+      const url = `/${pathArr.join('/')}`;
+      let perName = '';
+      pathArr.forEach((item, index) => {
+        if (index === 0) perName += item.charAt(0).toUpperCase() + item.slice(1);
+        else perName += '/' + item.charAt(0).toUpperCase() + item.slice(1);      
+      })
       return (
-        breadcrumbNameMap[url] ?
+        permissionMap[perName] ?
         <Breadcrumb.Item key={url}>
-          { !breadcrumbNameMap[url].disabled ? <Link to={url}>{breadcrumbNameMap[url].name}</Link> : <span>{breadcrumbNameMap[url].name}</span>}
+          { !permissionMap[perName].disabled ? <Link to={url}>{permissionMap[perName].label}</Link> : <span>{permissionMap[perName].label}</span>}
         </Breadcrumb.Item> : ''
       );
     })

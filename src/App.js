@@ -4,7 +4,7 @@ import { Provider, ReactReduxContext } from 'react-redux';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import configureStore, { history } from './configStore';
 import globalSagas from './containers/App/sagas';
-import Routes from './routes';
+import { CRouter } from './routes';
 import Dashboard from './containers/Dashboard';
 import { ConnectedRouter } from 'connected-react-router/immutable';
 import NotFound from './containers/NotFound';
@@ -25,7 +25,7 @@ function App() {
             <Route exact path="/" render={() => <Redirect to="/home" />} />
             <Route path="/" render={() => (
               <Dashboard>
-                {Routes(store)}
+                {CRouter(store)}
                 {/* <Redirect to="/404" /> */}
               </Dashboard>
             )} /> 

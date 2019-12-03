@@ -3,9 +3,9 @@ import { HashRouter as Router, Route, Switch, Link, withRouter } from 'react-rou
 import { Layout } from 'antd';
 import { Button, Avatar, Menu, Dropdown, Icon, Breadcrumb, Alert } from 'antd';
 
-import Header from '../../components/Header';
-import MSider from '../../components/Sider';
-import Bread from '../../components/Bread';
+import Header from '@/components/Header';
+import MSider from '@/components/Sider';
+import Bread from '@/components/Bread';
 const { Content } = Layout;
 class Dashboard extends Component {
 

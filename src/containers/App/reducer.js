@@ -11,13 +11,14 @@ import produce from 'immer';
 // import { LOAD_REPOS_SUCCESS, LOAD_REPOS, LOAD_REPOS_ERROR } from './constants';
 
 // The initial state of the App
+import { permissionMap } from '@/utils/permission.js';
 export const initialState = {
   loading: false,
   error: false,
   currentUser: false,
   userData: {
     repositories: false,
-    permissions: ['Hi', 'Hello', 'Hello/List', 'Hello/Detail', 'Home', 'Charts'], // 权限菜单
+    permissions: permissionMap, // 权限菜单
   },
 };
 
