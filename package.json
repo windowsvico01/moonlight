@@ -33,7 +33,7 @@
     "html-webpack-plugin": "4.0.0-beta.5",
     "identity-obj-proxy": "3.0.0",
     "ifanrx-react-ueditor": "^2.3.0",
-    "immer": "^3.1.3",
+    "immer": "^9.0.6",
     "immutable": "^4.0.0-rc.12",
     "invariant": "^2.2.4",
     "is-wsl": "^1.1.0",
